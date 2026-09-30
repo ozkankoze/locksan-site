@@ -1,0 +1,31 @@
+# Locksan Safety - Apache / cPanel ayarları
+Options -MultiViews
+DirectorySlash Off
+RewriteEngine On
+
+# www'ye yönlendir (Wix'teki gibi)
+RewriteCond %{HTTP_HOST} ^locksansafety\.com$ [NC]
+RewriteRule ^(.*)$ https://www.locksansafety.com/$1 [R=301,L]
+# HTTPS'e yönlendir
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Katalog PDF (eski Wix adresi)
+RewriteRule ^_files/ugd/5ea3ff_eae24ac7305849b7a82f1d656b103fb9\.pdf$ https://b3781288-8645-4f92-b873-6c622696fb4e.filesusr.com/ugd/5ea3ff_eae24ac7305849b7a82f1d656b103fb9.pdf [R=302,L]
+
+# Sondaki / işaretini kaldır
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# Temiz URL: /sayfa -> sayfa.html
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+ErrorDocument 404 /404.html
+AddDefaultCharset UTF-8
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
