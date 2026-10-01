@@ -3,7 +3,8 @@
 
   // Sticky header gölgesi
   var hdr=$('header.site');
-  if(hdr){var onScroll=function(){hdr.classList.toggle('scrolled',window.scrollY>10)};onScroll();window.addEventListener('scroll',onScroll,{passive:true});}
+  if(hdr){var sc=null,tick=false,onScroll=function(){tick=false;var s=window.pageYOffset>10;if(s!==sc){sc=s;hdr.classList.toggle('scrolled',s)}};
+    requestAnimationFrame(onScroll);window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(onScroll)}},{passive:true});}
 
   // Mobil menü
   var burger=$('.burger');
@@ -17,7 +18,10 @@
     document.addEventListener('click',function(e){if(!drop.contains(e.target)){drop.classList.remove('open');dbtn.setAttribute('aria-expanded','false')}});}
 
   // Site içi arama
-  var pages=window.LOCKSAN_SEARCH||[];
+  // Arama dizini ilk kullanımda yüklenir (sayfa açılışını yavaşlatmaz)
+  var pages=[],idxState=0,loadIdx=function(cb){if(idxState===2){cb&&cb();return}var q=loadIdx.q=loadIdx.q||[];cb&&q.push(cb);if(idxState)return;idxState=1;
+    var sc=document.createElement('script');sc.src='/assets/search.js?v='+(document.documentElement.getAttribute('data-v')||'');sc.async=true;
+    sc.onload=function(){pages=window.LOCKSAN_SEARCH||[];idxState=2;q.forEach(function(f){f()})};document.head.appendChild(sc)};
   var norm=function(s){return s.toLocaleLowerCase('tr').replace(/ı/g,'i').replace(/ğ/g,'g').replace(/ü/g,'u').replace(/ş/g,'s').replace(/ö/g,'o').replace(/ç/g,'c').replace(/[’'|]/g,'').replace(/\s+/g,' ')};
   $$('[data-search]').forEach(function(inp){
     var box=inp.parentNode.querySelector('.results');
@@ -29,7 +33,8 @@
       box.innerHTML=hits.length?hits.map(function(p,i){return '<a'+(i===0?' class="hl"':'')+' href="'+p[1]+'">'+p[0]+'</a>'}).join(''):'<p>Sonuç bulunamadı</p>';
       box.classList.add('show');
     };
-    inp.addEventListener('input',render);inp.addEventListener('focus',render);
+    var go=function(){loadIdx(render)};
+    inp.addEventListener('input',go);inp.addEventListener('focus',go);inp.addEventListener('pointerenter',function(){loadIdx()},{once:true});
     inp.addEventListener('keydown',function(e){if(e.key==='Enter'){var f=box.querySelector('a');if(f)location.href=f.href}if(e.key==='Escape'){box.classList.remove('show')}});
     document.addEventListener('click',function(e){if(!inp.parentNode.contains(e.target))box.classList.remove('show')});
   });
