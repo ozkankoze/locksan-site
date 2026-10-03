@@ -1,3 +1,4 @@
 site-full.zip
 *.zip
 .DS_Store
+_to_delete/
