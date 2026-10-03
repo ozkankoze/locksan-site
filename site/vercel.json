@@ -8,12 +8,12 @@
       "permanent": false
     },
     {
-      "source": "/post/bursa-etiketleme-kilitleme-%C3%BCr%C3%BCnleri-1",
+      "source": "/post/bursa-etiketleme-kilitleme-\u00fcr\u00fcnleri-1",
       "destination": "/post/bursa-etiketleme-kilitleme-%C3%BCr%C3%BCnleri",
       "permanent": true
     },
     {
-      "source": "/post/bursa-etiketleme-kilitleme-\u00fcr\u00fcnleri-1",
+      "source": "/post/bursa-etiketleme-kilitleme-%C3%BCr%C3%BCnleri-1",
       "destination": "/post/bursa-etiketleme-kilitleme-%C3%BCr%C3%BCnleri",
       "permanent": true
     }
