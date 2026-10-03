@@ -15,6 +15,7 @@ RewriteRule ^_files/ugd/5ea3ff_eae24ac7305849b7a82f1d656b103fb9\.pdf$ https://b3
 
 # Kopya içerik birleştirmeleri (301)
 RewriteRule ^post/bursa\-etiketleme\-kilitleme\-ürünleri\-1$ /post/bursa-etiketleme-kilitleme-%C3%BCr%C3%BCnleri [R=301,L,NE]
+RewriteRule ^post/denetle\-eked\-dogrulama\-adimi$ /post/dene-eked-test-adimi [R=301,L,NE]
 
 # Sondaki / işaretini kaldır
 RewriteCond %{REQUEST_FILENAME} !-f
