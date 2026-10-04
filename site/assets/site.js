@@ -76,4 +76,13 @@
   if(cio)$$('[data-count]').forEach(function(el){cio.observe(el)});
 
   var yr=document.getElementById('yr');if(yr)yr.textContent=new Date().getFullYear();
+
+document.querySelectorAll('[data-reffilter]').forEach(function(bar){
+  var btns=bar.querySelectorAll('button'),cards=document.querySelectorAll('.refcard');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.toggle('on',x===b)});
+    var f=b.getAttribute('data-f');
+    cards.forEach(function(c){c.classList.toggle('hide',f!=='all'&&c.getAttribute('data-s')!==f)});
+  })});
+});
 })();

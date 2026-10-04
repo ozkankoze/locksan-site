@@ -23,6 +23,7 @@ Locksan Safety, iş sağlığı ve güvenliği alanında enerji izolasyonu (EKED
 - [Etiketleme Kilitleme Ürünleri (tüm kategoriler)](https://www.locksansafety.com/etiketleme-kilitleme-urunleri): 10 ürün kategorisi, seçim tabloları, SSS
 - [Neden Locksan Safety?](https://www.locksansafety.com/neden-locksan-safety): Firma hakkında özet bilgiler
 - [Kurumsal](https://www.locksansafety.com/kurumsal): Misyon, vizyon, değerler
+- [Referanslar](https://www.locksansafety.com/referanslar): Tüpraş, Erdemir, Enerjisa, Henkel, Turkcell ve diğer referans firmalar
 - [Eğitim ve Danışmanlık](https://www.locksansafety.com/egitim-ve-danismanlik): EKED / LOTO eğitimi ve danışmanlık
 - [Güçlü Üretim Tesisi](https://www.locksansafety.com/guclu-uretim-tesisi): Üretim kapasitesi ve sertifikalar
 
