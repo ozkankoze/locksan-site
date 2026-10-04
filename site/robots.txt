@@ -1,4 +1,33 @@
+# Locksan Safety – tüm arama motorları ve yapay zekâ arama botları içeriğe erişebilir
 User-agent: *
+Allow: /
+
+# ChatGPT / OpenAI
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: GPTBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+
+# Google Gemini / Bing Copilot
+User-agent: Google-Extended
+Allow: /
+User-agent: Bingbot
 Allow: /
 
 Sitemap: https://www.locksansafety.com/sitemap.xml
