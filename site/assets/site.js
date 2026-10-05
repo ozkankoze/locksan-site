@@ -85,4 +85,54 @@ document.querySelectorAll('[data-reffilter]').forEach(function(bar){
     cards.forEach(function(c){c.classList.toggle('hide',f!=='all'&&c.getAttribute('data-s')!==f)});
   })});
 });
+
+  // ===== Teklif sepeti =====
+  var QK='locksan_teklif',qget=function(){try{var v=JSON.parse(localStorage.getItem(QK)||'[]');return Array.isArray(v)?v:[]}catch(e){return []}},
+      qset=function(a){try{localStorage.setItem(QK,JSON.stringify(a))}catch(e){}qbadge()},
+      qbadge=function(){var n=qget().reduce(function(s,x){return s+(+x.q||0)},0);$$('[data-qn]').forEach(function(el){el.textContent=n>99?'99+':n;el.hidden=!n})},
+      qesc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})},
+      qtoast=function(name){var t=$('.qtoast');if(!t){t=document.createElement('div');t.className='qtoast';t.setAttribute('role','status');document.body.appendChild(t)}
+        t.innerHTML='<span><b>'+qesc(name)+'</b> teklif sepetine eklendi</span><a href="/teklif-sepeti">Sepete Git</a>';t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(function(){t.classList.remove('show')},3200)};
+  qbadge();window.addEventListener('storage',qbadge);
+  $$('[data-qty]').forEach(function(w){var i=w.querySelector('input');$$('button',w).forEach(function(b){b.addEventListener('click',function(){i.value=Math.max(1,Math.min(9999,(parseInt(i.value,10)||1)+(+b.getAttribute('data-d'))));i.dispatchEvent(new Event('change'))})})});
+  $$('[data-add]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();
+    var box=b.closest('.qadd'),qi=box&&box.querySelector('[data-qty] input'),q=Math.max(1,parseInt(qi&&qi.value,10)||1),
+        it={code:b.getAttribute('data-code'),name:b.getAttribute('data-name'),img:b.getAttribute('data-img'),url:b.getAttribute('data-url'),q:q},a=qget(),f=null;
+    a.forEach(function(x){if(x.url===it.url)f=x});if(f)f.q=Math.min(9999,(+f.q||0)+q);else a.push(it);qset(a);
+    var c=$('.qcart');if(c){c.classList.remove('bump');void c.offsetWidth;c.classList.add('bump')}
+    var old=b.innerHTML;b.classList.add('ok');b.innerHTML=b.classList.contains('padd')?'✓ Eklendi':'✓ Sepete Eklendi';setTimeout(function(){b.classList.remove('ok');b.innerHTML=old},1600);
+    qtoast(((it.code||'')+' '+(it.name||'')).trim());
+  })});
+  var qp=$('[data-qpage]');
+  if(qp){
+    var list=$('.qlist',qp),form=$('.qform',qp),sum=$('.qsum',qp);
+    var draw=function(){var a=qget();
+      if(!a.length){list.innerHTML='<div class="qempty"><svg><use href="#i-cart"/></svg><h2>Teklif sepetiniz boş</h2><p>Ürün sayfalarındaki <b>Teklif Sepetine Ekle</b> veya kartlardaki <b>+ Teklif</b> düğmesiyle ürün ekleyebilirsiniz.</p><a class="btn btn-red" href="/etiketleme-kilitleme-urunleri">Ürünlere Göz At</a></div>';sum.hidden=true;form.setAttribute('data-empty','');return}
+      form.removeAttribute('data-empty');sum.hidden=false;
+      list.innerHTML=a.map(function(x,i){return '<div class="qitem" data-i="'+i+'"><a class="im" href="'+qesc(x.url)+'">'+(x.img?'<img src="'+qesc(x.img)+'" alt="'+qesc(x.name)+'" loading="lazy">':'<b>'+qesc(x.code)+'</b>')+'</a>'+
+        '<div>'+(x.code?'<span class="code">'+qesc(x.code)+'</span>':'')+'<a class="nm" href="'+qesc(x.url)+'">'+qesc(x.name)+'</a></div>'+
+        '<div class="qty sm"><button type="button" data-d="-1" aria-label="Azalt">−</button><input type="number" min="1" max="9999" value="'+(+x.q||1)+'" aria-label="Adet"><button type="button" data-d="1" aria-label="Arttır">+</button></div>'+
+        '<button type="button" class="rm" aria-label="Kaldır" title="Kaldır">×</button></div>'}).join('');
+      var n=a.reduce(function(s,x){return s+(+x.q||0)},0);$('.qsum span',qp).innerHTML='<b>'+a.length+'</b> ürün · toplam <b>'+n+'</b> adet';
+    };
+    list.addEventListener('click',function(e){var row=e.target.closest('.qitem');if(!row)return;var i=+row.getAttribute('data-i'),a=qget();
+      if(e.target.closest('.rm')){a.splice(i,1);qset(a);draw();return}
+      var d=e.target.closest('[data-d]');if(d){a[i].q=Math.max(1,Math.min(9999,(+a[i].q||1)+(+d.getAttribute('data-d'))));qset(a);draw()}});
+    list.addEventListener('change',function(e){if(e.target.tagName!=='INPUT')return;var row=e.target.closest('.qitem'),a=qget(),i=+row.getAttribute('data-i');a[i].q=Math.max(1,Math.min(9999,parseInt(e.target.value,10)||1));qset(a);draw()});
+    $('.qsum button',qp).addEventListener('click',function(){qset([]);draw()});
+    var F=function(n){return form.querySelector('[name="'+n+'"]')};
+    try{var sv=JSON.parse(localStorage.getItem('locksan_teklif_bilgi')||'{}');['ad','firma','tel','eposta'].forEach(function(k){if(sv[k])F(k).value=sv[k]})}catch(e){}
+    var msg=function(){var a=qget(),L=['Merhaba, aşağıdaki ürünler için fiyat teklifi rica ediyorum.',''];
+      a.forEach(function(x,i){L.push((i+1)+') '+(x.code?x.code+' – ':'')+x.name+' × '+x.q+' adet')});
+      L.push('');[['Ad Soyad','ad'],['Firma','firma'],['Telefon','tel'],['E-posta','eposta']].forEach(function(p){var v=F(p[1]).value.trim();if(v)L.push(p[0]+': '+v)});
+      var nt=F('not').value.trim();if(nt){L.push('');L.push('Not: '+nt)}return L.join('\n')};
+    var check=function(){var ok=true;['ad','tel'].forEach(function(k){var f=F(k),bad=!f.value.trim();f.classList.toggle('err',bad);if(bad)ok=false});
+      var em=F('eposta');if(em.value.trim()&&!/^\S+@\S+\.\S+$/.test(em.value.trim())){em.classList.add('err');ok=false}else em.classList.remove('err');
+      if(!ok){var f=form.querySelector('.err');f&&f.focus()}
+      try{localStorage.setItem('locksan_teklif_bilgi',JSON.stringify({ad:F('ad').value,firma:F('firma').value,tel:F('tel').value,eposta:F('eposta').value}))}catch(e){}
+      return ok&&qget().length};
+    $('[data-send="wa"]',qp).addEventListener('click',function(){if(check())window.open('https://wa.me/905078914728?text='+encodeURIComponent(msg()),'_blank','noopener')});
+    $('[data-send="mail"]',qp).addEventListener('click',function(){if(check())location.href='mailto:info@locksansafety.com?subject='+encodeURIComponent('Teklif Talebi – '+(F('firma').value.trim()||F('ad').value.trim()))+'&body='+encodeURIComponent(msg())});
+    draw();window.addEventListener('storage',draw);
+  }
 })();
