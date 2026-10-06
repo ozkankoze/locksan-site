@@ -46,6 +46,8 @@ Locksan Safety, iş sağlığı ve güvenliği alanında enerji izolasyonu (EKED
 - [Kilitleme ve Etiketleme Prosedürü](https://www.locksansafety.com/kilitleme-ve-etiketleme-proseduru)
 - [LOTO Süreci ve Sistemi](https://www.locksansafety.com/loto-sureci-ve-sistemi)
 - [Saha Araştırması](https://www.locksansafety.com/saha-arastirmasi)
+- [Yük Ayırıcı Kilitleme: Disconnect Switch İçin LOTO Rehberi](https://www.locksansafety.com/post/yuk-ayirici-kilitleme)
+- [Motor Koruma Şalteri Kilitleme: Motor Bakımında LOTO Rehberi](https://www.locksansafety.com/post/motor-koruma-salteri-kilitleme)
 - [Kaçak Akım Koruma Şalteri Kilitleme: Kaçak Akım Rölesi İçin LOTO Rehberi](https://www.locksansafety.com/post/kacak-akim-koruma-salteri-kilitleme)
 - [Kelebek Vana Kilitleme Ekipmanları: Çeşitleri, Doğru Model Seçimi ve Uygulama](https://www.locksansafety.com/post/kelebek-vana-kilitleme-ekipmanlari)
 - [EKED / LOTO Ürünleri Satan İyi Bir Firma Nasıl Seçilir? 10 Kriter](https://www.locksansafety.com/post/eked-loto-tedarikcisi-nasil-secilir)
