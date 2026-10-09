@@ -8,7 +8,9 @@
 
   // Mobil menü
   var burger=$('.burger');
-  if(burger){burger.addEventListener('click',function(){var o=document.body.classList.toggle('menu-open');burger.setAttribute('aria-label',o?'Menüyü kapat':'Menüyü aç');});}
+  var setTop=function(){if(hdr)document.documentElement.style.setProperty('--mtop',Math.max(0,Math.round(hdr.getBoundingClientRect().bottom))+'px')};
+  window.addEventListener('resize',setTop);
+  if(burger){burger.addEventListener('click',function(){setTop();var o=document.body.classList.toggle('menu-open');burger.setAttribute('aria-label',o?'Menüyü kapat':'Menüyü aç');});}
   $$('#menu a').forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('menu-open')})});
 
   // Ürünlerimiz açılır menü
