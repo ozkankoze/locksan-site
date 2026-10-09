@@ -46,6 +46,8 @@ Locksan Safety, iş sağlığı ve güvenliği alanında enerji izolasyonu (EKED
 - [Kilitleme ve Etiketleme Prosedürü](https://www.locksansafety.com/kilitleme-ve-etiketleme-proseduru)
 - [LOTO Süreci ve Sistemi](https://www.locksansafety.com/loto-sureci-ve-sistemi)
 - [Saha Araştırması](https://www.locksansafety.com/saha-arastirmasi)
+- [Çekvalf (Geri Tepme Vanası) ve LOTO: Neden Kilitlenmez, Ne Kilitlenir?](https://www.locksansafety.com/post/cekvalf-kilitleme-loto)
+- [Acil Stop Butonu ve Emniyet Şalteri: LOTO Yerine Geçer mi?](https://www.locksansafety.com/post/acil-stop-ve-emniyet-salteri-loto-farki)
 - [Transfer Şalteri (ATS) Kilitleme: Çift Beslemeli Sistemlerde LOTO](https://www.locksansafety.com/post/transfer-salteri-ats-kilitleme)
 - [Açık Tip Devre Kesici (ACB) Kilitleme: Ana Dağıtım Panosunda LOTO](https://www.locksansafety.com/post/acik-tip-devre-kesici-acb-kilitleme)
 - [Glob Vana Kilitleme: El Çarklı Vanalar İçin LOTO Rehberi](https://www.locksansafety.com/post/glob-vana-kilitleme)
