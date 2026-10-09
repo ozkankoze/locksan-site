@@ -4,16 +4,16 @@
   "redirects": [
     {
       "source": "/_files/ugd/5ea3ff_eae24ac7305849b7a82f1d656b103fb9.pdf",
-      "destination": "https://b3781288-8645-4f92-b873-6c622696fb4e.filesusr.com/ugd/5ea3ff_eae24ac7305849b7a82f1d656b103fb9.pdf",
+      "destination": "/assets/locksan-eked-katalog.pdf",
       "permanent": false
     },
     {
-      "source": "/post/bursa-etiketleme-kilitleme-%C3%BCr%C3%BCnleri-1",
+      "source": "/post/bursa-etiketleme-kilitleme-\u00fcr\u00fcnleri-1",
       "destination": "/post/bursa-etiketleme-kilitleme-%C3%BCr%C3%BCnleri",
       "permanent": true
     },
     {
-      "source": "/post/bursa-etiketleme-kilitleme-\u00fcr\u00fcnleri-1",
+      "source": "/post/bursa-etiketleme-kilitleme-%C3%BCr%C3%BCnleri-1",
       "destination": "/post/bursa-etiketleme-kilitleme-%C3%BCr%C3%BCnleri",
       "permanent": true
     },

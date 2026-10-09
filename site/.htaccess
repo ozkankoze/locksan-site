@@ -11,7 +11,7 @@ RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
 # Katalog PDF (eski Wix adresi)
-RewriteRule ^_files/ugd/5ea3ff_eae24ac7305849b7a82f1d656b103fb9\.pdf$ https://b3781288-8645-4f92-b873-6c622696fb4e.filesusr.com/ugd/5ea3ff_eae24ac7305849b7a82f1d656b103fb9.pdf [R=302,L]
+RewriteRule ^_files/ugd/5ea3ff_eae24ac7305849b7a82f1d656b103fb9\.pdf$ /assets/locksan-eked-katalog.pdf [R=302,L]
 
 # Kopya içerik birleştirmeleri (301)
 RewriteRule ^post/bursa\-etiketleme\-kilitleme\-ürünleri\-1$ /post/bursa-etiketleme-kilitleme-%C3%BCr%C3%BCnleri [R=301,L,NE]
