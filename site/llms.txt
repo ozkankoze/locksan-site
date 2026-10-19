@@ -46,6 +46,8 @@ Locksan Safety, iş sağlığı ve güvenliği alanında enerji izolasyonu (EKED
 - [Kilitleme ve Etiketleme Prosedürü](https://www.locksansafety.com/kilitleme-ve-etiketleme-proseduru)
 - [LOTO Süreci ve Sistemi](https://www.locksansafety.com/loto-sureci-ve-sistemi)
 - [Saha Araştırması](https://www.locksansafety.com/saha-arastirmasi)
+- [Şalter Kilidi Çeşitleri: Sigorta, Minyatür ve Kompakt Şalter Kilitleri](https://www.locksansafety.com/post/salter-kilidi-cesitleri)
+- [EKED İstasyonu Nedir? LOTO İstasyonu Çeşitleri ve Doğru Seçim](https://www.locksansafety.com/post/eked-istasyonu-nedir-cesitleri)
 - [Kilit Çoklayıcı (Çoklandırıcı) Nedir? Çeşitleri ve Doğru Seçim](https://www.locksansafety.com/post/kilit-coklayici-nedir-cesitleri)
 - [EKED Seti Seçim Rehberi: Hangi LOTO Seti Size Uygun?](https://www.locksansafety.com/post/eked-seti-secim-rehberi)
 - [Kimya ve Petrokimya Tesislerinde LOTO: Hat İzolasyonu ve Güvenli Bakım](https://www.locksansafety.com/post/kimya-ve-petrokimya-tesislerinde-loto)
