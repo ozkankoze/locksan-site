@@ -46,6 +46,8 @@ Locksan Safety, iş sağlığı ve güvenliği alanında enerji izolasyonu (EKED
 - [Kilitleme ve Etiketleme Prosedürü](https://www.locksansafety.com/kilitleme-ve-etiketleme-proseduru)
 - [LOTO Süreci ve Sistemi](https://www.locksansafety.com/loto-sureci-ve-sistemi)
 - [Saha Araştırması](https://www.locksansafety.com/saha-arastirmasi)
+- [Robot Hücrelerinde LOTO: Endüstriyel Robot Bakımında Güvenli Kilitleme](https://www.locksansafety.com/post/robot-hucrelerinde-loto)
+- [Kompresör Bakımında LOTO: Otomatik Çalışma ve Basınçlı Hava Riskine Karşı Kilitleme](https://www.locksansafety.com/post/kompresor-bakiminda-loto)
 - [Buhar Kazanı ve Buhar Hatlarında LOTO: Basınç ve Sıcaklığa Karşı Güvenli İzolasyon](https://www.locksansafety.com/post/buhar-kazani-ve-buhar-hatlarinda-loto)
 - [Gezer Vinç Bakımında LOTO: Köprü, Araba ve Kanca İçin Güvenli Kilitleme](https://www.locksansafety.com/post/gezer-vinc-bakiminda-loto)
 - [Jeneratör ve UPS Bakımında LOTO: Çift Besleme ve Geri Besleme Riski](https://www.locksansafety.com/post/jenerator-ve-ups-bakiminda-loto)
