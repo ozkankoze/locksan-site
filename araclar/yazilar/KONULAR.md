@@ -90,3 +90,5 @@
 - vardiya-degisiminde-loto-devri
 - yalova-etiketleme-kilitleme-ürünleri
 - yuk-ayirici-kilitleme
+- kor-flans-kilitleme-boru-hatti-izolasyonu
+- pompa-bakiminda-loto
