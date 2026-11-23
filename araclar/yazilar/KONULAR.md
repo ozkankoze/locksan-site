@@ -92,3 +92,5 @@
 - yuk-ayirici-kilitleme
 - kor-flans-kilitleme-boru-hatti-izolasyonu
 - pompa-bakiminda-loto
+- elektrik-panosu-bakiminda-loto
+- paketleme-ve-ambalaj-makinelerinde-loto
